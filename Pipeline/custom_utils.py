@@ -176,7 +176,7 @@ def download_raw_data(local_file, env_vars):
 
 # Helper functions
 def _get_beiwe_credentials(region_name, access_key_ssm_name, secret_key_ssm_name):
-print "ICI: " + region_name +"," + access_key_ssm_name + "," + secret_key_ssm_name
+    print "ICI: " + region_name +"," + access_key_ssm_name + "," + secret_key_ssm_name
     ssm_client = boto3.client('ssm', region_name=region_name)
     resp = ssm_client.get_parameters(
         Names=(access_key_ssm_name, secret_key_ssm_name),
